@@ -220,5 +220,7 @@ def ask(
     formatted_response = response_message.split('\n\n')
     return formatted_response
 
-if __name__ == '__main__':  
-    app.run(debug=True)
+if __name__ == '__main__':
+    # Get port from environment variable or default to 10000
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port)
